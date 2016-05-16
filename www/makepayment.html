@@ -1,0 +1,140 @@
+
+<div data-page="makepayment" class="page">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left"><a href="" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+        <div class="center">Make Payment</div>
+        <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+</div>
+<div class="page-content">
+<div class="content-block-title">Enter Payment Details</div>
+<div class="list-block inputs-list">
+    <form action="http://78.46.254.56/cpdistrict/mobileapi/newPayment.php" method="GET" class="ajax-submit" >
+    <ul>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Individual/Organization Name</div>
+                    <div class="item-input">
+                        <input type="text" placeholder="Your name" name="name" required="required"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">District</div>
+                    <div class="item-input">
+                        <select name="district" required="required">
+                            <option> </option>
+                            <option>Kpone</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Gender</div>
+                    <div class="item-input">
+                        <select name="gender" required="required">
+                            <option> </option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Mobile</div>
+                    <div class="item-input">
+                        <input type="tel" placeholder="eg. 233240418863" name="mobile" required="required"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Revenue Category</div>
+                    <div class="item-input">
+                        <select name="rev_type" class="smart-select rev_category" id="rev_category" required="required">
+                            <option> </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Sub-Category1</div>
+                    <div class="item-input">
+                        <select name="sub_category1" id="sub_category1" required="required">
+                            <option> </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Sub-Category2</div>
+                    <div class="item-input">
+                        <select name="sub_category2" id="sub_category2" required="required">
+                            <option> </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Sub-Category3</div>
+                    <div class="item-input">
+                        <select name="sub_category3" id="sub_category3" required="required">
+                            <option> </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Amount(GHC)</div>
+                    <div class="item-input">
+                        <input type="tel" placeholder="eg. 20" name="amount" id="amount" disabled required="required"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">Rate</div>
+                    <div class="item-input">
+                        <input type="tel" placeholder="eg. permit/PA/DAY" name="rate" id="rate" disabled required="required" />
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="content-block">
+                <p class="buttons-row"><button class="button button-fill button-raised" type="submit">Submit</button></p>
+            </div>
+        </li>
+    </ul>
+    </form>
+</div>
+</div>
+</div>
