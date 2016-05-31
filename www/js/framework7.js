@@ -7822,7 +7822,7 @@
                     form.trigger('beforeSubmit', {data:data, xhr: xhr});
                 },
                 error: function (xhr) {
-                    form.trigger('submitError', {data:data, xhr: xhr});  
+                    form.trigger('submitError', {data:data, xhr: xhr});
                 },
                 success: function (data) {
                     form.trigger('submitted', {data: data, xhr: xhr});

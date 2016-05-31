@@ -10,7 +10,7 @@
 <div class="page-content">
 <div class="content-block-title">Enter Payment Details</div>
 <div class="list-block inputs-list">
-    <form action="http://78.46.254.56/cpdistrict/mobileapi/newPayment.php" method="GET" class="ajax-submit" >
+    <form action="http://api.nalosolutions.com/cpdistrict/mobileapi/newPayment.php" method="GET" class="ajax-submit makepay" >
     <ul>
         <li>
             <div class="item-content">
@@ -27,10 +27,8 @@
                 <div class="item-inner">
                     <div class="item-title label">District</div>
                     <div class="item-input">
-                        <select name="district" required="required">
+                        <select name="district" id="district" required="required">
                             <option> </option>
-                            <option>Kpone</option>
-                            <option>Female</option>
                         </select>
                     </div>
                 </div>
@@ -113,7 +111,7 @@
                 <div class="item-inner">
                     <div class="item-title label">Amount(GHC)</div>
                     <div class="item-input">
-                        <input type="tel" placeholder="eg. 20" name="amount" id="amount" disabled required="required"/>
+                        <input type="tel" placeholder="eg. 20" name="amount" id="amount" required="required"/>
                     </div>
                 </div>
             </div>
@@ -130,7 +128,7 @@
         </li>
         <li>
             <div class="content-block">
-                <p class="buttons-row"><button class="button button-fill button-raised" type="submit">Submit</button></p>
+                <p class="buttons-row"><button class="button button-fill button-raised ks-notification-4" type="submit">Submit</button></p>
             </div>
         </li>
     </ul>

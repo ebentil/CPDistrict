@@ -34,6 +34,13 @@ $$(document).on('ajaxComplete', function (e) {
     }
     myApp.hideIndicator();
 });
+$$(document).on('ajaxError', function (e) {
+    if (e.detail.xhr.requestUrl.indexOf('autocomplete-languages.json') >= 0) {
+        // Don't show preloader for autocomplete demo requests
+        return;
+    }
+    myApp.hideIndicator();
+});
 
 // Callbacks for specific pages when it initialized
 /* ===== Modals Page events  ===== */
@@ -442,7 +449,7 @@ $$('.login-screen').find('.button').on('click', function () {
     //    mainView.router.load({pageName: "index"});
     //});
     $$.ajax({
-        url : 'http://78.46.254.56/cpdistrict/mobileapi/login.php',
+        url : 'http://api.nalosolutions.com/cpdistrict/mobileapi/login.php',
         type : 'POST',
         data: {
             username : username,
@@ -1129,7 +1136,7 @@ function createPayHistoryPage() {
     var collector_id = localStorage.getItem("collector_id");
     var district = localStorage.getItem("district");
     $$.ajax({
-        url : 'http://78.46.254.56/cpdistrict/mobileapi/payhistory.php',
+        url : 'http://api.nalosolutions.com/cpdistrict/mobileapi/payhistory.php',
         type : 'POST',
         data: {
             collector_id : collector_id,
@@ -1146,9 +1153,21 @@ function createPayHistoryPage() {
 $$(document).on('click', '.generate-payhistory', createPayHistoryPage);
 
 /* ===== Generate Revenue Category Content Dynamically ===== */
+//function loadRevCategories(){
+//    $$.ajax({
+//        url : 'http://api.nalosolutions.com/cpdistrict/mobileapi/loadcategories.php',
+//        type : 'POST',
+//        data: {
+//        },
+//        success : function(data,status,xhr) {
+//            $$("#rev_category").html(data);
+//        }
+//    });
+//}
+
 function loadRevCategories(){
     $$.ajax({
-        url : 'http://78.46.254.56/cpdistrict/mobileapi/loadcategories.php',
+        url : 'http://api.nalosolutions.com/cpdistrict/mobileapi/loadcategories.php',
         type : 'POST',
         data: {
         },
@@ -1158,21 +1177,21 @@ function loadRevCategories(){
     });
 }
 
-function loadRevCategories(){
+function loadDistricts(){
     $$.ajax({
-        url : 'http://78.46.254.56/cpdistrict/mobileapi/loadcategories.php',
+        url : 'http://api.nalosolutions.com/cpdistrict/mobileapi/loaddistricts.php',
         type : 'POST',
         data: {
         },
         success : function(data,status,xhr) {
-            $$("#rev_category").html(data);
+            $$("#district").html(data);
         }
     });
 }
 
 function loadsub_cat(cat_id,cat_level){
     $$.ajax({
-        url: 'http://78.46.254.56/cpdistrict/mobileapi/loadsub_cat.php',
+        url: 'http://api.nalosolutions.com/cpdistrict/mobileapi/loadsub_cat.php',
         type: 'POST',
         data: {
             cat_id: cat_id,
@@ -1195,6 +1214,7 @@ function loadsub_cat(cat_id,cat_level){
 }
 
 myApp.onPageInit('makepayment',loadRevCategories);
+myApp.onPageInit('makepayment',loadDistricts);
 
 myApp.onPageInit('makepayment',function(){
     $$('#rev_category').on('change', function (e) {
@@ -1218,5 +1238,34 @@ myApp.onPageInit('makepayment',function(){
         var cat_level = 4;
         loadsub_cat(cat_id,cat_level);
     });
+    $$('form.ajax-submit').on('submitted', function (e) {
+        //var xhr = e.detail.xhr; // actual XHR object
+        //
+        //var data = e.detail.data; // Ajax response from action file
+        //// do something with response data
+
+        myApp.addNotification({
+            message: 'Payment details submitted!',
+            button: {
+                text: 'Close',
+                color: 'lightgreen'
+            },
+            onClose: function () {
+                $(".makepay")[0].reset();
+            }
+        });
+    });
+    $$('form.ajax-submit').on('submitError', function (e) {
+        //var xhr = e.detail.xhr; // actual XHR object
+        //
+        //var data = e.detail.data; // Ajax response from action file
+        //// do something with response data
+
+        myApp.addNotification({
+            message: 'An error occurred. Please contact support or try again later.'
+        });
+    });
 });
+
+
 
