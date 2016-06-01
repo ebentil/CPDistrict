@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/kitchen-sink.css">
     <link rel="icon" href="img/icon.png">
   </head>
-  <body>
+  <body class="theme-teal">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
     <div class="panel panel-left panel-cover">
@@ -23,7 +23,7 @@
           <div data-page="panel-left" class="page">
             <div class="page-content">
                 <div class="content-block">
-                    <h2>Hello, Ebo</h2>
+                    <h2>Hello, <span id="colname">Collector</span></h2>
                 </div>
               <div class="content-block-title">Collector+</div>
                <div class="list-block">
@@ -42,14 +42,13 @@
                           <div class="item-title">Payment History</div>
                         </div>
                       </div></a></li>
-
-                      <li><a href="" class="item-link close-panel">
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-f7"></i></div>
-                        <div class="item-inner">
-                          <div class="item-title">Settings</div>
-                        </div>
-                      </div></a></li>
+                      <!--<li><a href="" class="item-link close-panel">-->
+                      <!--<div class="item-content">-->
+                        <!--<div class="item-media"><i class="icon icon-f7"></i></div>-->
+                        <!--<div class="item-inner">-->
+                          <!--<div class="item-title">Settings</div>-->
+                        <!--</div>-->
+                      <!--</div></a></li>-->
                         <li><a href="" class="item-link close-panel open-login-screen">
                         <div class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
@@ -103,8 +102,10 @@
     <div class="login-screen modal-in">
 
         <div data-page="login-screen-embedded" class="page">
-            <div class="page-content login-screen-content" style="background-color: #b3daff">
-                <div class="login-screen-title">Collector+</div>
+            <div class="page-content login-screen-content" style="background-image:linear-gradient(#d9e3e9, #67e9c8);">
+                <div class="login-screen-title">COLLECTOR+</div>
+                <h3 style="text-align: center;">for district revenue collection</h3>
+                <p style="text-align: center;">collector login</p>
                 <form>
                     <div class="list-block inputs-list">
                         <ul>
@@ -132,10 +133,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="content-block"><a href="#" class="button button-big">Sign In</a></div>
+                    <div class="content-block"><a href="#" class="button button-big button-fill button-raised">Sign In</a></div>
                     <div class="content-block">
-                        <div class="list-block-label">You need to be connected to the internet to login for the first time.</div>
+                        <div class="list-block-label">You need to be connected to the internet to login.</div>
                     </div>
+                    <div class="content-block" style="text-align: center; "><a href="http://nalosolutions.com" class="link external" style="font-weight: bold;">Powered by <span style="color: orangered;">NALO</span></a></div>
                 </form>
             </div>
         </div>
@@ -153,8 +155,8 @@
 
               <div class="page-content">
                   <div class="content-block-title">Welcome To Collector+</div>
-                  <div class="content-block"><a href="makepayment.html" class="button button-raised make-payment">Make Payment</a></div>
-                  <div class="content-block"><a href="" class="button button-raised generate-payhistory">Payment History</a></div>
+                  <div class="content-block"><a href="makepayment.html" class="button button-raised button-fill make-payment">Make Payment</a></div>
+                  <div class="content-block"><a href="" class="button button-raised button-fill generate-payhistory">Payment History</a></div>
 
               </div>
 
